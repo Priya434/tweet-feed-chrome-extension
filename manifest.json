@@ -1,0 +1,11 @@
+{
+	"name": "Tweet Feed",
+	"version": "1.0.0",
+	"description": "Assignment for capital compute.",
+	"manifest_version": 3,
+	"author": "Priyanshu Kumawat",
+	"action": {
+		"default_popup": "src/popup.html",
+		"default_title": "Tweet Feed"
+	}
+}
