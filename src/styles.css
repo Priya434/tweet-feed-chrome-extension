@@ -1,0 +1,11 @@
+#shadow-icon {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 64px;
+	height: 64px;
+	border-radius: 100%;
+	z-index: 10000;
+	opacity: 0.8;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
