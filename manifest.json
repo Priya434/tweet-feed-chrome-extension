@@ -7,5 +7,9 @@
 	"action": {
 		"default_popup": "src/popup.html",
 		"default_title": "Tweet Feed"
+	},
+	"icons": {
+		"16": "assets/icon-16.png",
+		"32": "assets/icon-32.png"
 	}
 }
