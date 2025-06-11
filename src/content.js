@@ -5,11 +5,26 @@ icon.id = "shadow-icon";
 document.body.appendChild(icon);
 
 icon.addEventListener("click", () => {
-	const tweetElement = document.querySelector('[data-testid="tweetText"]');
-	const tweetText = tweetElement.querySelector("span").textContent.trim();
+	const tweetText = getTweetText();
 	alert(tweetText);
 	writeTweetReply(tweetText);
 });
+
+/**
+ * @description Get tweet text
+ * @returns {string}
+ */
+const getTweetText = () => {
+	const tweetElement = document.querySelectorAll(
+		'article [data-testid="tweetText"]'
+	)[0];
+	if (!tweetElement) {
+		console.warn("Tweet not found.");
+		return null;
+	}
+	const tweet = tweetElement.querySelector("span");
+	return tweet ? tweet.textContent.trim() : null;
+};
 
 /**
  * @param {string} reply
@@ -19,6 +34,9 @@ const writeTweetReply = (reply) => {
 	const tweetBox = document.querySelector('[data-testid="tweetTextarea_0"]');
 	if (tweetBox) {
 		tweetBox.focus();
-		document.execCommand("insertText", false, reply);
+		const lines = reply.split("\n");
+		lines.forEach((line, index) =>
+			document.execCommand("insertText", false, line)
+		);
 	}
 };
